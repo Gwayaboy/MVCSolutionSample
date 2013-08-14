@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'/>
+    <link href='BDDfy.css' rel='stylesheet'/>
+    <script type='text/javascript' src='jquery-1.7.1.min.js'></script>
+    <script type='text/javascript' src='BDDfy.js'></script>
+    <title>BDDfy Test Result 8/13/2013</title>
+  </head>
+  <body>
+    <div id='main'>
+      <div class='header'>
+        <div id='BDDfyTitle'>DonorSpace - a self-managed donor management system</div>
+        <div id='BDDfyDescription'>Executable Specifications</div>
+      </div>
+      <section class='summary'>
+        <h3 class='label'>Summary:</h3>
+        <ul class='resultSummary'>
+          <li class='storySummary'>
+            <div class='summaryLine'>
+              <div class='summaryLabel'>Stories</div>
+              <span class='summaryCount'>3</span>
+            </div>
+          </li>
+          <li class='scenarioSummary'>
+            <div class='summaryLine'>
+              <div class='summaryLabel'>Scenarios</div>
+              <span class='summaryCount'>8</span>
+            </div>
+          </li>
+          <li class='Passed'>
+            <div class='summaryLine'>
+              <div class='summaryLabel'>Passed</div>
+              <span class='summaryCount'>8</span>
+            </div>
+          </li>
+          <li class='Inconclusive'>
+            <div class='summaryLine'>
+              <div class='summaryLabel'>Inconclusive</div>
+              <span class='summaryCount'>0</span>
+            </div>
+          </li>
+          <li class='NotImplemented'>
+            <div class='summaryLine'>
+              <div class='summaryLabel'>Not Implemented</div>
+              <span class='summaryCount'>0</span>
+            </div>
+          </li>
+          <li class='Failed'>
+            <div class='summaryLine'>
+              <div class='summaryLabel'>Failed</div>
+              <span class='summaryCount'>0</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <div id='testResult'>
+        <div id='detailsHeader'>
+          <h3 id='detailsLable'>Details:</h3>
+          <div id='expandCollapse'>
+            <a href='#' class='expandAll'>[expand all]</a>
+            <a href='#' class='collapseAll'>[collapse all]</a>
+          </div>
+        </div>
+        <ul class='testResult'>
+          <li>
+            <div class='story Passed'>
+              <div class='storyMetaData'>
+                <div class='storyTitle'>User Story 001: Authenticating users</div>
+                <ul class='storyNarrative'>
+                  <li>As Charity User</li>
+                  <li>I want to authenticate</li>
+                  <li>So that I can access my space</li>
+                </ul>
+              </div>
+              <div class='scenarios'>
+                <div class='scenario'>
+                  <div class='Passed canToggle scenarioTitle' data-toggle-target='a010de26-7aac-4e40-bd0a-4f61c9f7f1e6'>Scenario 01: Authenticating on premise Charity Administrator</div>
+                  <ul class='steps' id='a010de26-7aac-4e40-bd0a-4f61c9f7f1e6'>
+                    <li class='step Passed  SetupState ' data-toggle-target='3de646d9-bffe-4a4c-8721-d0bf2eddbb4a' >
+                      <span>Given there are 3 Charity Administrators</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveSetupState ' data-toggle-target='5ba2beab-d54d-458d-bd29-13bb74ce280d' >
+                      <span>And the user about to be authenticated matches the administrator</span>
+                    </li>
+                    <li class='step Passed  Transition ' data-toggle-target='45d5d452-695b-4dc3-ac0a-54efb4684ef0' >
+                      <span>When the user is authenticated</span>
+                    </li>
+                    <li class='step Passed  Assertion ' data-toggle-target='90a85ef6-d34f-4066-a0c8-c186e14fcd02' >
+                      <span>Then the user should be authenticated on premise</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveAssertion ' data-toggle-target='1ccc3ede-2adb-45a5-8c2b-ff2ef36a6e71' >
+                      <span>And the user is redirected to the home page</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class='scenario'>
+                  <div class='Passed canToggle scenarioTitle' data-toggle-target='d25710f6-9146-4633-b9fe-84652aad69a8'>Scenario 02: Authenticating off premise Regular Charity User</div>
+                  <ul class='steps' id='d25710f6-9146-4633-b9fe-84652aad69a8'>
+                    <li class='step Passed  SetupState ' data-toggle-target='469be70a-0ea1-44c8-8299-d12ca21c9053' >
+                      <span>Given the Charity Authentication type is off Premise</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveSetupState ' data-toggle-target='3334f697-c72b-4485-8e95-b19652de9b0c' >
+                      <span>And the off premise authentication service authorises the user</span>
+                    </li>
+                    <li class='step Passed  Transition ' data-toggle-target='1dbb1955-949b-4953-832a-9e9f021248d9' >
+                      <span>When the user is authenticated</span>
+                    </li>
+                    <li class='step Passed  Assertion ' data-toggle-target='ae380c18-2907-444c-afdb-783c45bb6b5a' >
+                      <span>Then the user should be authenticated off premise</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveAssertion ' data-toggle-target='88026046-7b89-4b35-9f7d-5af8c2985bfd' >
+                      <span>And the user is redirected to the home page</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class='scenario'>
+                  <div class='Passed canToggle scenarioTitle' data-toggle-target='97874a12-6fa1-446d-b223-a1bff87d2157'>Scenario 03: Failing to authenticate off premise unknown User</div>
+                  <ul class='steps' id='97874a12-6fa1-446d-b223-a1bff87d2157'>
+                    <li class='step Passed  SetupState ' data-toggle-target='7f894744-f40f-4773-b4ee-dc51a4ec8c53' >
+                      <span>Given the Charity Authentication type is off Premise</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveSetupState ' data-toggle-target='6aeb35f2-b9d4-43b4-b474-377fc9619e1e' >
+                      <span>And the on premise authentication service does not authorise the User</span>
+                    </li>
+                    <li class='step Passed  Transition ' data-toggle-target='10681605-ace2-4f0d-914b-fe7e6144f76a' >
+                      <span>When the user is authenticated</span>
+                    </li>
+                    <li class='step Passed  Assertion ' data-toggle-target='5bc75206-a52b-4921-81b9-6cc66067be48' >
+                      <span>Then the user should not be authenticated off premise</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveAssertion ' data-toggle-target='026ccfda-d31f-4604-ac3c-5e247b933814' >
+                      <span>And there should be an error message for the user name</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveAssertion ' data-toggle-target='2fda3b7e-6886-4866-8a44-ed864e9b76ca' >
+                      <span>And the user stays on the login page</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class='story Passed'>
+              <div class='storyMetaData'>
+                <div class='storyTitle'>User Story 002: Charity Administration</div>
+                <ul class='storyNarrative'>
+                  <li>As Charity Administrator</li>
+                  <li>I want to be able to update the Charity authentication settings</li>
+                  <li>So that I can manage the Charity off premise authentication</li>
+                </ul>
+              </div>
+              <div class='scenarios'>
+                <div class='scenario'>
+                  <div class='Passed canToggle scenarioTitle' data-toggle-target='b129e5f3-e505-46e3-a828-bed63083ecf6'>Scenario 01: Prepopulating a Charity Administration details</div>
+                  <ul class='steps' id='b129e5f3-e505-46e3-a828-bed63083ecf6'>
+                    <li class='step Passed  SetupState ' data-toggle-target='e9a1d195-c646-4b65-9df1-a51ff98bd46c' >
+                      <span>Given an existing Charity has a name and a description</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveSetupState ' data-toggle-target='f52f31aa-1f11-4ccb-92aa-6608b6462109' >
+                      <span>And the Charity has an off premise authentication type</span>
+                    </li>
+                    <li class='step Passed  Transition ' data-toggle-target='e9270b97-717a-4d99-84ad-92ba478c0d9d' >
+                      <span>When displaying the Charity Administration page</span>
+                    </li>
+                    <li class='step Passed  Assertion ' data-toggle-target='70fc1925-01e9-4b6f-b0ab-16620308a572' >
+                      <span>Then the page should be prepopulated with existing details</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class='scenario'>
+                  <div class='Passed canToggle scenarioTitle' data-toggle-target='65824e60-4cdc-4d5a-83f6-6c9c8a831aae'>Scenario 02: Persisting web site Url for Charity with off premise authentication</div>
+                  <ul class='steps' id='65824e60-4cdc-4d5a-83f6-6c9c8a831aae'>
+                    <li class='step Passed  SetupState ' data-toggle-target='e0a09061-e787-4f34-97d7-5bafd1dbfbee' >
+                      <span>Given the Charity authentication type is off premise</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveSetupState ' data-toggle-target='39b445bd-d199-43df-9f56-63cfe3e26b12' >
+                      <span>And a valid web service url as been entered</span>
+                    </li>
+                    <li class='step Passed  Transition ' data-toggle-target='50ed47d9-a4de-4e74-9711-5f3fc09db728' >
+                      <span>When saving the web service url</span>
+                    </li>
+                    <li class='step Passed  Assertion ' data-toggle-target='2b7ef808-1fb0-454e-beec-584899fb8ad8' >
+                      <span>Then the web service url should be persisted against the relevant Charity</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveAssertion ' data-toggle-target='d5c10c62-21e9-41d7-80b8-1ca8653114ec' >
+                      <span>And the execution result should be successful</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class='scenario'>
+                  <div class='Passed canToggle scenarioTitle' data-toggle-target='573395a5-9a91-40f1-a7e6-8dba8b3e2176'>Scenario 03: Failing to persist web site Url</div>
+                  <ul class='steps' id='573395a5-9a91-40f1-a7e6-8dba8b3e2176'>
+                    <li class='step Passed  SetupState ' data-toggle-target='5cc75068-686b-401d-a563-9137bce7c8c2' >
+                      <span>Given the Charity authentication type is off premise</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveSetupState ' data-toggle-target='e4b54355-eee7-43df-be33-38e54a85dcca' >
+                      <span>And an invalid web service url as been entered</span>
+                    </li>
+                    <li class='step Passed  Transition ' data-toggle-target='afcc9037-8968-4155-ba32-52af8597ce41' >
+                      <span>When saving the web service url</span>
+                    </li>
+                    <li class='step Passed  Assertion ' data-toggle-target='bdbed05d-54df-4735-a4b4-28580d2c32f5' >
+                      <span>Then the web service url should be not be persisted</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveAssertion ' data-toggle-target='5e2ebe64-2e12-410a-a73f-ef9a3dd77b8e' >
+                      <span>And the execution result should be unsuccessfull</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class='story Passed'>
+              <div class='storyMetaData'>
+                <div class='storyTitle'>User Story 003: Manage Administrators</div>
+                <ul class='storyNarrative'>
+                  <li>As Charity Administrator</li>
+                  <li>I want to Add, Edit, Delete Administrators</li>
+                  <li>So that I can manage the Charity Administrators</li>
+                </ul>
+              </div>
+              <div class='scenarios'>
+                <div class='scenario'>
+                  <div class='Passed canToggle scenarioTitle' data-toggle-target='b71124a0-a06f-4ec4-b487-321e631992e4'>Scenario 01: View all Administrators</div>
+                  <ul class='steps' id='b71124a0-a06f-4ec4-b487-321e631992e4'>
+                    <li class='step Passed  SetupState ' data-toggle-target='de9380d1-f372-48ad-a64f-5acffbdb3134' >
+                      <span>Given the Charity has 5 Administrators</span>
+                    </li>
+                    <li class='step Passed  Transition ' data-toggle-target='d4938418-0483-411e-8304-9c18794df4e4' >
+                      <span>When all Administrators are listed</span>
+                    </li>
+                    <li class='step Passed  Assertion ' data-toggle-target='9c832bcc-f08d-491c-98f2-b809ca275449' >
+                      <span>Then there should be 5 Administrators</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveAssertion ' data-toggle-target='18e2601a-cb85-4942-8d3c-1cab041134ea' >
+                      <span>And each Administrator should have the corresponding UserName and fullName</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class='scenario'>
+                  <div class='Passed canToggle scenarioTitle' data-toggle-target='fd99a043-d6e9-4407-91ba-ec046f70f042'>Scenario 02: Deleting an existing Administrator</div>
+                  <ul class='steps' id='fd99a043-d6e9-4407-91ba-ec046f70f042'>
+                    <li class='step Passed  SetupState ' data-toggle-target='800b663e-bd0f-45a6-b763-f7ed68465ed8' >
+                      <span>Given the Charity has 3 Administrators</span>
+                    </li>
+                    <li class='step Passed  Transition ' data-toggle-target='924d35e0-90a7-4bbe-aadc-5ba0854fe835' >
+                      <span>When Deleting the last Administrator</span>
+                    </li>
+                    <li class='step Passed  Assertion ' data-toggle-target='8413875f-62f1-417a-8e9f-fb8db28c56aa' >
+                      <span>Then the relevant Administration should have been deleted</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveAssertion ' data-toggle-target='2b48107a-0e91-4ea6-8681-5300c5cd44b9' >
+                      <span>And there should be 2 Administrators remaining</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <p><span>Tested at: 8/13/2013 6:08:02 PM</span></p>
+      </div>
+    </div>
+    <div class='footer'>Powered by <a href='http://hg.mehdi-khalili.com/BDDfy/wiki/Home'>BDDfy</a> framework</div>
+  </body>
+</html>

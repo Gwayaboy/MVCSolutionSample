@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'/>
+    <link href='BDDfy.css' rel='stylesheet'/>
+    <script type='text/javascript' src='jquery-1.7.1.min.js'></script>
+    <script type='text/javascript' src='BDDfy.js'></script>
+    <title>BDDfy Test Result 8/13/2013</title>
+  </head>
+  <body>
+    <div id='main'>
+      <div class='header'>
+        <div id='BDDfyTitle'>DonorSpace - a self-managed donor management system</div>
+        <div id='BDDfyDescription'>Unit Tests</div>
+      </div>
+      <section class='summary'>
+        <h3 class='label'>Summary:</h3>
+        <ul class='resultSummary'>
+          <li class='storySummary'>
+            <div class='summaryLine'>
+              <div class='summaryLabel'>Stories</div>
+              <span class='summaryCount'>6</span>
+            </div>
+          </li>
+          <li class='scenarioSummary'>
+            <div class='summaryLine'>
+              <div class='summaryLabel'>Scenarios</div>
+              <span class='summaryCount'>18</span>
+            </div>
+          </li>
+          <li class='Passed'>
+            <div class='summaryLine'>
+              <div class='summaryLabel'>Passed</div>
+              <span class='summaryCount'>18</span>
+            </div>
+          </li>
+          <li class='Inconclusive'>
+            <div class='summaryLine'>
+              <div class='summaryLabel'>Inconclusive</div>
+              <span class='summaryCount'>0</span>
+            </div>
+          </li>
+          <li class='NotImplemented'>
+            <div class='summaryLine'>
+              <div class='summaryLabel'>Not Implemented</div>
+              <span class='summaryCount'>0</span>
+            </div>
+          </li>
+          <li class='Failed'>
+            <div class='summaryLine'>
+              <div class='summaryLabel'>Failed</div>
+              <span class='summaryCount'>0</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <div id='testResult'>
+        <div id='detailsHeader'>
+          <h3 id='detailsLable'>Details:</h3>
+          <div id='expandCollapse'>
+            <a href='#' class='expandAll'>[expand all]</a>
+            <a href='#' class='collapseAll'>[collapse all]</a>
+          </div>
+        </div>
+        <ul class='testResult'>
+          <li>
+            <div class='story Passed'>
+              <div class='storyMetaData'>
+                <div class='storyTitle'>AuthenticateUserCommandHandler</div>
+              </div>
+              <div class='scenarios'>
+                <div class='scenario'>
+                  <div class='Passed canToggle scenarioTitle' data-toggle-target='b3b46bba-ae9a-445a-8c18-4268392f37c2'>Failing to authenticate a regular user</div>
+                  <ul class='steps' id='b3b46bba-ae9a-445a-8c18-4268392f37c2'>
+                    <li class='step Passed  SetupState ' data-toggle-target='08a80ce7-1757-4736-8545-3577d147c166' >
+                      <span>Given the Charity exists</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveSetupState ' data-toggle-target='230e0996-8066-4107-8849-40a4359fa88d' >
+                      <span>And the Charity has no Administrator matching the username being authenticated</span>
+                    </li>
+                    <li class='step Passed  Transition ' data-toggle-target='93293314-12f4-4c2d-b6f4-a1589aaf2e92' >
+                      <span>When authenticating the charity user</span>
+                    </li>
+                    <li class='step Passed  Assertion ' data-toggle-target='eca80b2b-8809-4ad6-9266-f01db7d30729' >
+                      <span>Then a Business Rule Exception should be thrown with failure message</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class='scenario'>
+                  <div class='Passed canToggle scenarioTitle' data-toggle-target='c36ada96-09fa-4efc-83d5-190966fc010a'>Failing to retrieve specified Charity</div>
+                  <ul class='steps' id='c36ada96-09fa-4efc-83d5-190966fc010a'>
+                    <li class='step Passed  SetupState ' data-toggle-target='fc485106-3e03-4ec4-bf3b-db35e0411fa2' >
+                      <span>Given the Charity does not exist</span>
+                    </li>
+                    <li class='step Passed  Transition ' data-toggle-target='88ad756d-aba1-44a3-ad49-cc448e0c7cbd' >
+                      <span>When authenticating the Charity User</span>
+                    </li>
+                    <li class='step Passed  Assertion ' data-toggle-target='b3e187e9-cd45-4abc-9eb5-dedb37f44872' >
+                      <span>Then a Business Rule Exception should be thrown with failure message</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class='scenario'>
+                  <div class='Passed canToggle scenarioTitle' data-toggle-target='1bf427ab-04a7-47aa-9d05-4003f2756bdc'>Successfully authenticating a charity regular user</div>
+                  <ul class='steps' id='1bf427ab-04a7-47aa-9d05-4003f2756bdc'>
+                    <li class='step Passed  SetupState ' data-toggle-target='da23b9ea-4322-4808-a38f-4c80389507a9' >
+                      <span>Given the Charity exists</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveSetupState ' data-toggle-target='f93a6e48-ed73-4fa2-97bc-943a96094965' >
+                      <span>And the Charity has an Administrator matching the username being authenticated</span>
+                    </li>
+                    <li class='step Passed  Transition ' data-toggle-target='6d60d46a-0d53-4b23-a34a-90e7da42dfc6' >
+                      <span>When authenticating the Charity Admin</span>
+                    </li>
+                    <li class='step Passed  Assertion ' data-toggle-target='6053bc7c-08a6-4934-bba8-618bf47efea1' >
+                      <span>Then the user should be authenticated only on premise</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class='scenario'>
+                  <div class='Passed canToggle scenarioTitle' data-toggle-target='9f0cdf78-ce72-4703-af45-824fcf484756'>Successfully authenticating a regular user off premise</div>
+                  <ul class='steps' id='9f0cdf78-ce72-4703-af45-824fcf484756'>
+                    <li class='step Passed  SetupState ' data-toggle-target='73292433-dfc3-47c1-b236-b39ca52acc69' >
+                      <span>Given the Charity exists</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveSetupState ' data-toggle-target='2096fa46-a4cc-450e-a05f-7e58da8ef8fa' >
+                      <span>And the Charity only authenticates off premise</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveSetupState ' data-toggle-target='027b2e80-516a-4c26-b9dc-eb2d5907d048' >
+                      <span>And the Charity has no Administrator matching the username being authenticated</span>
+                    </li>
+                    <li class='step Passed  Transition ' data-toggle-target='dee8d367-2c75-4f37-a740-92c81210d606' >
+                      <span>When authenticating the Charity User</span>
+                    </li>
+                    <li class='step Passed  Assertion ' data-toggle-target='27d201d7-4d6f-49e2-a37d-4d0eb17ff45b' >
+                      <span>Then the user should be authenticated only off premise</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class='scenario'>
+                  <div class='Passed canToggle scenarioTitle' data-toggle-target='9b9e0429-cc9f-4746-a47f-387450400056'>Successfully authenticating a regular user on premise</div>
+                  <ul class='steps' id='9b9e0429-cc9f-4746-a47f-387450400056'>
+                    <li class='step Passed  SetupState ' data-toggle-target='882715a7-0f10-4397-b3de-4fa7ac5869cd' >
+                      <span>Given the Charity exists</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveSetupState ' data-toggle-target='69b2e679-0db2-468d-be5f-68270e6ef427' >
+                      <span>And the Charity only authenticates on premise</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveSetupState ' data-toggle-target='34f03c5e-adaf-4648-8cfe-897fa655cee8' >
+                      <span>And the Charity has no Administrator matching the username being authenticated</span>
+                    </li>
+                    <li class='step Passed  Transition ' data-toggle-target='68e9b614-6286-44de-93b8-c81eea72058b' >
+                      <span>When authenticating the Charity User</span>
+                    </li>
+                    <li class='step Passed  Assertion ' data-toggle-target='2733f9e2-d119-4078-9c16-b1d7c113e219' >
+                      <span>Then the user should be authenticated only on premise</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class='story Passed'>
+              <div class='storyMetaData'>
+                <div class='storyTitle'>Charity</div>
+              </div>
+              <div class='scenarios'>
+                <div class='scenario'>
+                  <div class='Passed canToggle scenarioTitle' data-toggle-target='f690aac8-3608-48f3-964c-d6575e0859ea'>When checking user is charity administrator</div>
+                  <ul class='steps' id='f690aac8-3608-48f3-964c-d6575e0859ea'>
+                    <li class='step Passed  SetupState ' data-toggle-target='c737a090-8f3d-4a7a-9085-9a7b96a5431b' >
+                      <span>Given there are many administrators</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveSetupState ' data-toggle-target='585be298-166d-450f-8c9f-06b7733053de' >
+                      <span>And the last administrator matches the requested user name</span>
+                    </li>
+                    <li class='step Passed  Transition ' data-toggle-target='42795cce-e7a2-49df-a5fe-d9c5bda670ba' >
+                      <span>When checking user is administrator</span>
+                    </li>
+                    <li class='step Passed  Assertion ' data-toggle-target='842ea7ed-4e34-4453-b794-b13134f0c6af' >
+                      <span>Then the result should be true</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class='story Passed'>
+              <div class='storyMetaData'>
+                <div class='storyTitle'>CommandProcessor</div>
+              </div>
+              <div class='scenarios'>
+                <div class='scenario'>
+                  <div class='Passed canToggle scenarioTitle' data-toggle-target='e87b6151-74bf-46b8-85c1-bea7183d5336'>Processing a command that does not have a handler</div>
+                  <ul class='steps' id='e87b6151-74bf-46b8-85c1-bea7183d5336'>
+                    <li class='step Passed  SetupState ' data-toggle-target='c5ddbd37-75d1-4a4a-91a5-467e633f9b6d' >
+                      <span>Given the command does not have a handler</span>
+                    </li>
+                    <li class='step Passed  Transition ' data-toggle-target='aae63757-665c-48ac-9932-33fe4b414e9e' >
+                      <span>When invoking command</span>
+                    </li>
+                    <li class='step Passed  Assertion ' data-toggle-target='7af05a5e-d4d8-4c00-bb86-ae93a453516a' >
+                      <span>Then the Execution result should be unsuccessfull with a Fatal Exception</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveAssertion ' data-toggle-target='be1a3bce-b07f-41da-9405-e7c3c55d841e' >
+                      <span>And the error message should be Command handler not found for command type</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class='scenario'>
+                  <div class='Passed canToggle scenarioTitle' data-toggle-target='06fe2ae9-d7cc-49d0-96cc-95f98dd5f21e'>Processing a command that throws a business exception</div>
+                  <ul class='steps' id='06fe2ae9-d7cc-49d0-96cc-95f98dd5f21e'>
+                    <li class='step Passed  SetupState ' data-toggle-target='03237e4a-ddc3-4729-8a23-b8a42bbd4173' >
+                      <span>Given the command handler throws a Business Exception</span>
+                    </li>
+                    <li class='step Passed  Transition ' data-toggle-target='c02cfae5-daf2-4d15-8215-3477c1d49f66' >
+                      <span>When invoking command</span>
+                    </li>
+                    <li class='step Passed  Assertion ' data-toggle-target='8bd99673-8156-4175-8294-edcf25a12079' >
+                      <span>Then the Execution result should be unsuccessfull with a BrokenBusinessRule</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveAssertion ' data-toggle-target='c55c5b3e-c1aa-41d3-bf29-076fab662d2d' >
+                      <span>And The Execution Result should have the corresponding error message</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveAssertion ' data-toggle-target='1c26fc61-fb56-46f9-92f1-72feefa3179b' >
+                      <span>And The UnitOfWork should begin a transaction</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveAssertion ' data-toggle-target='157097a8-fdc4-4960-814c-7b3bd291c004' >
+                      <span>And The transaction should not be committed</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class='scenario'>
+                  <div class='Passed canToggle scenarioTitle' data-toggle-target='fe804d4b-ab24-456d-bf5a-08929f8a108c'>Processing a null command</div>
+                  <ul class='steps' id='fe804d4b-ab24-456d-bf5a-08929f8a108c'>
+                    <li class='step Passed  Assertion ' data-toggle-target='547b8433-5d63-43ef-8d73-189e0350d1b7' >
+                      <span>Then an ArgumentNullException should be thrown</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class='scenario'>
+                  <div class='Passed canToggle scenarioTitle' data-toggle-target='cb11382f-af04-4c1d-9223-9fff51e25c68'>Processing a valid command</div>
+                  <ul class='steps' id='cb11382f-af04-4c1d-9223-9fff51e25c68'>
+                    <li class='step Passed  Transition ' data-toggle-target='0c64b136-d47c-421f-8386-55950304fac4' >
+                      <span>When invoking command</span>
+                    </li>
+                    <li class='step Passed  Assertion ' data-toggle-target='9639a661-6182-4869-ad15-7f02a39a5a9c' >
+                      <span>Then the UnitOfWork should begin a transaction</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveAssertion ' data-toggle-target='5ed1a7e3-0ac7-4512-ad4b-c44218cb4492' >
+                      <span>And its command handler should be invoked</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveAssertion ' data-toggle-target='0376f3ce-4f3c-4d25-aa28-a268abaf365d' >
+                      <span>And The Transaction should be committed</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveAssertion ' data-toggle-target='b512f7be-a212-462d-a0de-c71bac6b737b' >
+                      <span>And the Execution result should be successfull</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class='story Passed'>
+              <div class='storyMetaData'>
+                <div class='storyTitle'>DbTransactionWrapper</div>
+              </div>
+              <div class='scenarios'>
+                <div class='scenario'>
+                  <div class='Passed canToggle scenarioTitle' data-toggle-target='6451b5ab-6c14-4a5b-9c6c-766eccef6eec'>Aborting an active transaction</div>
+                  <ul class='steps' id='6451b5ab-6c14-4a5b-9c6c-766eccef6eec'>
+                    <li class='step Passed  Transition ' data-toggle-target='c15c69c3-2c05-4b32-8805-499fa40f256e' >
+                      <span>When Disposing the transaction</span>
+                    </li>
+                    <li class='step Passed  Assertion ' data-toggle-target='4afac76c-504f-459d-b737-09780405c6ba' >
+                      <span>Then the pending transaction should not be committed</span>
+                    </li>
+                    <li class='step Passed  Assertion ' data-toggle-target='b8f0f9b3-2c00-44ac-b3fd-64e8dfb2c1d3' >
+                      <span>Then the pending transaction should be rollbacked</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveAssertion ' data-toggle-target='c064e1d6-df1f-4c2d-b9d0-203aa944008f' >
+                      <span>And the database connection disposed</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveAssertion ' data-toggle-target='4baf985e-4d23-4692-83bf-cdd81f86113b' >
+                      <span>And the transaction should not be active</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class='scenario'>
+                  <div class='Passed canToggle scenarioTitle' data-toggle-target='243f6643-eca3-40ea-b4eb-3a77e805bf19'>Aborting an inactive transaction</div>
+                  <ul class='steps' id='243f6643-eca3-40ea-b4eb-3a77e805bf19'>
+                    <li class='step Passed  SetupState ' data-toggle-target='e67b84f3-fc88-4e14-a983-66b7082782f4' >
+                      <span>Given the transaction has been committed</span>
+                    </li>
+                    <li class='step Passed  Transition ' data-toggle-target='ecd2f0c8-bc6a-4bdc-a7fc-79a28f5c716b' >
+                      <span>When Disposing the transaction</span>
+                    </li>
+                    <li class='step Passed  Assertion ' data-toggle-target='b31381ef-ef25-40e5-be21-98eeb95075f1' >
+                      <span>Then the pending transaction should not be committed twice</span>
+                    </li>
+                    <li class='step Passed  Assertion ' data-toggle-target='a39b1b1b-cbeb-4215-b406-7379a9f7c68f' >
+                      <span>Then the pending transaction should not be rollbacked</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveAssertion ' data-toggle-target='83bc7af9-7589-4c02-a24f-153deb4987a5' >
+                      <span>And the database connection should be disposed</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveAssertion ' data-toggle-target='de2e6b45-b18f-4cb4-bf77-6763bf461d01' >
+                      <span>And the transaction should not be active</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class='scenario'>
+                  <div class='Passed canToggle scenarioTitle' data-toggle-target='0bf4b668-1065-4106-8086-c0c18fc048cf'>Committing an active transaction</div>
+                  <ul class='steps' id='0bf4b668-1065-4106-8086-c0c18fc048cf'>
+                    <li class='step Passed  Transition ' data-toggle-target='c71f48da-747c-4e3f-957a-b24e45e41788' >
+                      <span>When committing the transaction</span>
+                    </li>
+                    <li class='step Passed  Assertion ' data-toggle-target='c00ea917-fe41-4498-adbc-1eb2b48989c6' >
+                      <span>Then the transaction should be committed</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveAssertion ' data-toggle-target='ffefdec9-0f79-4e31-bcea-af3b700161d0' >
+                      <span>And the transaction should not be active</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class='scenario'>
+                  <div class='Passed canToggle scenarioTitle' data-toggle-target='441e006b-99b8-45bb-9422-6b824cf7fb8c'>Committing an inactive transaction</div>
+                  <ul class='steps' id='441e006b-99b8-45bb-9422-6b824cf7fb8c'>
+                    <li class='step Passed  SetupState ' data-toggle-target='d9322909-49c5-4d8f-905f-2f1260dcc5f6' >
+                      <span>Given the transaction is already committed</span>
+                    </li>
+                    <li class='step Passed  Transition ' data-toggle-target='5f187e18-b88e-413c-a373-c7dbccea62a2' >
+                      <span>When committing the transaction</span>
+                    </li>
+                    <li class='step Passed  Assertion ' data-toggle-target='aa0d16af-b158-4589-b720-1f397f1e41d4' >
+                      <span>Then the transaction should not be committed twice</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveAssertion ' data-toggle-target='6c1253ae-79d8-4220-95ca-074806092756' >
+                      <span>And the transaction should not be active</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class='story Passed'>
+              <div class='storyMetaData'>
+                <div class='storyTitle'>FormProcessor</div>
+              </div>
+              <div class='scenarios'>
+                <div class='scenario'>
+                  <div class='Passed canToggle scenarioTitle' data-toggle-target='a01693cf-f49f-4a65-b4d2-8ead3d4e3c3b'>Processing a null form</div>
+                  <ul class='steps' id='a01693cf-f49f-4a65-b4d2-8ead3d4e3c3b'>
+                    <li class='step Passed  Assertion ' data-toggle-target='e4366e8a-1cd2-4637-9d09-b29d0a944253' >
+                      <span>Then an ArgumentNullException should be thrown</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class='scenario'>
+                  <div class='Passed canToggle scenarioTitle' data-toggle-target='7e0e1edf-bf0a-4fca-b8be-9ca9bbfe15d6'>Processing a valid form</div>
+                  <ul class='steps' id='7e0e1edf-bf0a-4fca-b8be-9ca9bbfe15d6'>
+                    <li class='step Passed  Transition ' data-toggle-target='b3b40d51-d881-4786-b554-e9299ba901c2' >
+                      <span>When processing form</span>
+                    </li>
+                    <li class='step Passed  Assertion ' data-toggle-target='4c3cc1dd-d367-4fa0-876e-a66a8d5d7326' >
+                      <span>Then the command should be mapped from the form</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveAssertion ' data-toggle-target='7d1e9f57-f882-49f9-9dea-71edbac4d5b9' >
+                      <span>And the command should be processed</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveAssertion ' data-toggle-target='b994b225-3ba6-472f-88c5-08dcccfcba95' >
+                      <span>And the execution result should be logged</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class='story Passed'>
+              <div class='storyMetaData'>
+                <div class='storyTitle'>ModelMapper</div>
+              </div>
+              <div class='scenarios'>
+                <div class='scenario'>
+                  <div class='Passed canToggle scenarioTitle' data-toggle-target='b08ea7f8-1e33-4784-b066-03c4b6d6364d'>Failing to Map a Form with no mapping configuration</div>
+                  <ul class='steps' id='b08ea7f8-1e33-4784-b066-03c4b6d6364d'>
+                    <li class='step Passed  SetupState ' data-toggle-target='9730589b-b244-40ce-a431-ca818d739d8b' >
+                      <span>Given the Form has no mapping configuration</span>
+                    </li>
+                    <li class='step Passed  Transition ' data-toggle-target='c38805a9-3256-4e31-bdc4-4f43b797364f' >
+                      <span>When mapping a form to its corresponding command</span>
+                    </li>
+                    <li class='step Passed  Assertion ' data-toggle-target='a0c7344c-2874-490e-b6e7-2e4dd0624b53' >
+                      <span>Then an ArgumentException should be thrown</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveAssertion ' data-toggle-target='d7137559-485f-4ef9-8594-b351a11d8e1d' >
+                      <span>And the exception error message should be There is no command associated with Form FakeForm</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class='scenario'>
+                  <div class='Passed canToggle scenarioTitle' data-toggle-target='b178ff67-978e-41c9-a2c7-024cb734304e'>Mapping successfully a Form to its corresponding Command</div>
+                  <ul class='steps' id='b178ff67-978e-41c9-a2c7-024cb734304e'>
+                    <li class='step Passed  SetupState ' data-toggle-target='aa8c2fd1-3a30-4aa2-9e65-0deb444c3403' >
+                      <span>Given the Form is mapped to a Command</span>
+                    </li>
+                    <li class='step Passed  Transition ' data-toggle-target='5c030931-c539-429a-821a-88cb5efbf740' >
+                      <span>When mapping a form to its corresponding command</span>
+                    </li>
+                    <li class='step Passed  Assertion ' data-toggle-target='245aa8ed-26a6-4965-82d4-52e887ac35fa' >
+                      <span>Then mapper should retrieve the mapping configuration for the form</span>
+                    </li>
+                    <li class='step Passed  ConsecutiveAssertion ' data-toggle-target='cca353e4-b25f-41ba-97b4-e700f743a781' >
+                      <span>And mapper should the form to its corresponding command</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <p><span>Tested at: 8/13/2013 6:08:18 PM</span></p>
+      </div>
+    </div>
+    <div class='footer'>Powered by <a href='http://hg.mehdi-khalili.com/BDDfy/wiki/Home'>BDDfy</a> framework</div>
+  </body>
+</html>

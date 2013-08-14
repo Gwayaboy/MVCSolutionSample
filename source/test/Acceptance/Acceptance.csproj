@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D28DD10D-00AF-4D24-9AE7-80789DF10689}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Intrigma.DonorSpace.Acceptance</RootNamespace>
+    <AssemblyName>Intrigma.DonorSpace.Acceptance</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\..\..\packages\Autofac.3.0.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Configuration">
+      <HintPath>..\..\..\packages\Autofac.3.0.2\lib\net40\Autofac.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Autofac.Mvc4.3.0.0\lib\net40\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="AutofacContrib.NSubstitute">
+      <HintPath>..\..\..\packages\AutofacContrib.NSubstitute.3.1.1\lib\NET40\AutofacContrib.NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=2.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\AutoMapper.2.2.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="FizzWare.NBuilder">
+      <HintPath>..\..\..\packages\NBuilder.3.0.1.1\lib\FizzWare.NBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentAssertions, Version=2.0.1.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\FluentAssertions.2.0.1\lib\net45\FluentAssertions.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\FluentValidation.4.0.0.0\lib\Net40\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="HttpSimulator">
+      <HintPath>..\..\..\packages\HttpSimulator.1.0.0.0\lib\Net40\HttpSimulator.dll</HintPath>
+    </Reference>
+    <Reference Include="Humanizer">
+      <HintPath>..\..\..\packages\Humanizer.0.2\lib\NET40\Humanizer.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcContrib.TestHelper">
+      <HintPath>..\..\..\packages\MvcContrib.Mvc3.TestHelper-ci.3.0.100.0\lib\MvcContrib.TestHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="NSubstitute">
+      <HintPath>..\..\..\packages\NSubstitute.1.6.0.0\lib\NET40\NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\..\..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="Seterlund.CodeGuard, Version=2.3.1.40278, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Seterlund.CodeGuard.2.3.1\lib\net40\Seterlund.CodeGuard.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TestStack.BDDfy">
+      <HintPath>..\..\..\packages\TestStack.BDDfy.3.15\lib\NET40\TestStack.BDDfy.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assertions\ActionResultAssertionBase.cs" />
+    <Compile Include="Assertions\ActionResultAssertions.cs" />
+    <Compile Include="Assertions\AssertionsExtensions.cs" />
+    <Compile Include="Assertions\BusinessRuleExceptionAssertions.cs" />
+    <Compile Include="Assertions\ExecutionResultAssertions.cs" />
+    <Compile Include="Assertions\FormActionResultAssertion.cs" />
+    <Compile Include="Configuration\BddifyConfiguration.cs" />
+    <Compile Include="Configuration\PersistableEntityPropertyNamer.cs" />
+    <Compile Include="Configuration\SpecificationsHtmlReportConfigBase.cs" />
+    <Compile Include="Configuration\SpecStoryMetaDataScanner.cs" />
+    <Compile Include="Configuration\TestConfigurator.cs" />
+    <Compile Include="Fakes\FakeCommand.cs" />
+    <Compile Include="Fakes\FakeForm.cs" />
+    <Compile Include="Helper\Database.cs" />
+    <Compile Include="Helper\IDatabase.cs" />
+    <Compile Include="Modules\ScenarioModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Specification\IScenario.cs" />
+    <Compile Include="Specification\Resolution\AutofacLifeTimeScope.cs" />
+    <Compile Include="Specification\Resolution\IScope.cs" />
+    <Compile Include="Specification\Resolution\ISpecification.cs" />
+    <Compile Include="Specification\ScenarioCategory.cs" />
+    <Compile Include="Specification\ScenarioContext\AutoMappedActionResultControllerScenario.cs" />
+    <Compile Include="Specification\ScenarioContext\AutoMappedJSonControllerScenario.cs" />
+    <Compile Include="Specification\ScenarioContext\AutoMappedViewControllerScenario.cs" />
+    <Compile Include="Specification\ScenarioFor.cs" />
+    <Compile Include="Specification\ScenarioContext\ControllerScenario.cs" />
+    <Compile Include="Specification\ScenarioContext\IControllerScenario.cs" />
+    <Compile Include="Specification\ScenarioContext\NotImplementedSubcutaneouslyScenario.cs" />
+    <Compile Include="Specification\ScenarioContext\PostControllerScenario.cs" />
+    <Compile Include="Specification\ScenarioContext\RedirectControllerScenario.cs" />
+    <Compile Include="Specification\ScenarioContext\ViewControllerScenario.cs" />
+    <Compile Include="Specification\Specification.cs" />
+    <Compile Include="Specification\SpecificationFor.cs" />
+    <Compile Include="UserStories\001_User_authenfication\us001_sc02.cs" />
+    <Compile Include="UserStories\001_User_authenfication\us001_sc03.cs" />
+    <Compile Include="UserStories\001_User_authenfication\us001_User_authentication.cs" />
+    <Compile Include="UserStories\001_User_authenfication\us001_sc01.cs" />
+    <Compile Include="UserStories\002_Charity_administration\us002_Charity_administration.cs" />
+    <Compile Include="UserStories\002_Charity_administration\us002_sc01.cs" />
+    <Compile Include="UserStories\002_Charity_administration\us002_sc02.cs" />
+    <Compile Include="UserStories\002_Charity_administration\us002_sc03.cs" />
+    <Compile Include="UserStories\003_Manage_Administrators\us003_Manage_Administrators.cs" />
+    <Compile Include="UserStories\003_Manage_Administrators\us003_sc01.cs" />
+    <Compile Include="UserStories\003_Manage_Administrators\us003_sc02.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BDDfy.readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\application\Core\Core.csproj">
+      <Project>{877EE454-3C06-476B-B40A-629791BD2EE0}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\application\Data\Data.EntityFramework.csproj">
+      <Project>{1C3C85A3-7966-4F9E-B40A-8E680D11A394}</Project>
+      <Name>Data.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\application\DependencyResolution\DependencyResolution.csproj">
+      <Project>{A875A08F-5035-4F69-BAFA-CFD7973F6B7A}</Project>
+      <Name>DependencyResolution</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\application\Infrastructure\Infrastructure.csproj">
+      <Project>{0D9B74C4-A71A-4A21-AA76-680780A95A72}</Project>
+      <Name>Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\application\Services\Services.csproj">
+      <Project>{8320DD2B-465B-4A51-B55C-2DC06C3DAAD1}</Project>
+      <Name>Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

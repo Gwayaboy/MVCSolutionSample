@@ -1,0 +1,62 @@
+﻿@model Intrigma.DonorSpace.Web.ViewModels.EditAdministratorForm
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>Edit Administrator</h1>
+            </hgroup>
+        </div>
+    </section>
+}
+<section id="EditAdministrator" class="form">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <fieldset>
+            <legend>Edit Administrator</legend>
+            <ol>
+                <li>
+                    @Html.HiddenFor(m => m.CharityId)
+                    @Html.Hidden("OriginalUserName",Model.UserName)
+                    @Html.LabelFor(m => m.UserName)
+                    @Html.TextBoxFor(m => m.UserName)
+                    @Html.ValidationMessageFor(m => m.UserName)
+                </li>
+                <li>
+                    @Html.LabelFor(m => m.FullName)
+                    @Html.TextBoxFor(m => m.FullName)
+                    @Html.ValidationMessageFor(m => m.FullName)
+                </li>
+                <li class="password">
+                    @Html.LabelFor(m => m.CurrentPassword)
+                    @Html.PasswordFor(m => m.CurrentPassword)
+                    @Html.ValidationMessageFor(m => m.CurrentPassword)
+                </li>
+                <li class="password">
+                    @Html.LabelFor(m => m.NewPassword)
+                    @Html.PasswordFor(m => m.NewPassword)
+                    @Html.ValidationMessageFor(m => m.NewPassword)
+                </li>
+            </ol>
+            <div class="center">
+                <input type="submit" value="Save" />
+            </div>
+        </fieldset>
+    }
+</section>
+
+@section startUpscripts {
+    <script>
+        $(function() {
+            donorSpace.spinner.showWhenPosting("#EditAdministrator form");
+        });
+    </script>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

@@ -1,0 +1,86 @@
+﻿@using Intrigma.DonorSpace.Core.Domain
+@using Intrigma.DonorSpace.Web.Controllers
+@using Intrigma.DonorSpace.Core.Domain
+@using Intrigma.DonorSpace.Web.Controllers
+@model Intrigma.DonorSpace.Web.ViewModels.CharityViewModel
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>Charity Administration</h1>
+            </hgroup>
+        </div>
+    </section>
+}
+@{
+    string btnManageDonorStyle, btnAuthenticationSettingStyle;
+    if (Model.AuthenticationType == AuthenticationType.OnPremise)
+    {
+        btnManageDonorStyle = string.Empty;
+        btnAuthenticationSettingStyle = "display:none";
+    }
+    else
+    {
+        btnManageDonorStyle = "display:none";
+        btnAuthenticationSettingStyle = string.Empty;
+    }
+    
+}
+
+
+<section id="CharityAdministration" class="form">
+    <div>
+        @Html.LabelFor(x => x.SiteName) 
+    </div>
+    <div>
+        @Html.EditorFor(x => x.SiteName)
+    </div>
+    <div>
+        @Html.LabelFor(x => x.Description)  
+    </div>
+    <div>
+        @Html.TextAreaFor(x => x.Description,new { @rows = 4 })
+    </div>
+
+    <label>Authentication Type</label>
+
+    <div>
+        <div>
+            @Html.RadioButtonFor(x => x.AuthenticationType,"OnPremise", new {id = "AuthenticationType_OnPremise"})
+            <span>We manage your authentication</span>
+        </div>
+        <div>
+            @Html.RadioButtonFor(x => x.AuthenticationType,"OffPremise", new {id = "AuthenticationType_OffPremise"})   
+            <span>You manage your authentication</span>
+        </div>
+       
+        <label>&nbsp;</label>
+        <a href="#" class="button" id="btnAuthSettings" style="@btnAuthenticationSettingStyle">Authentication Settings</a>
+        
+    </div>
+    <div  class="clearBoth"></div>
+    <label>User Management</label>
+
+    <div>
+        <div>@(Html.ActionLink<AdministrationController>(x => x.Administrators(Model.Id), "Manage Administrators",new {@class = "button"})) </div>
+       
+        <div>@(Html.ActionLink<AdministrationController>(c => c.Donors(),"Manage Users", new {id = "btnManageDonors", @class = "button", @style=btnManageDonorStyle}))</div>
+        
+    </div>
+    
+    <div id="webServiceSettings" title="Authentication Settings">
+        @Html.HiddenFor(x => x.Id)
+        @Html.Hidden("postUrl",Url.Action("UpdateAuthenticationDetails", "Administration"))
+        @Html.LabelFor(x => x.WebServiceUrl)
+        @Html.EditorFor(x => x.WebServiceUrl)
+        <span class="field-validation-error" style="display: none">web service url must be specified</span>
+    </div>
+    
+    
+</section>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/appAdministration")
+}

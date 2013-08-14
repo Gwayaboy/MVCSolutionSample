@@ -1,0 +1,81 @@
+﻿@using Intrigma.DonorSpace.Web.Controllers
+@model IEnumerable<Intrigma.DonorSpace.Web.ViewModels.AdministratorDetailViewModel>
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>Manage Administrators</h1>
+            </hgroup>
+        </div>
+    </section>
+}
+
+@section addionnalcss
+{
+    @Styles.Render("~/Content/bootstrap")
+}
+
+@{
+    var charityId = 0;
+    if (Model.Any())
+    {
+        charityId = Model.First().CharityId;
+    }
+}
+
+<table id="administrators" class="table users" 
+       data-charityId="@charityId" 
+       data-deleteUrl="@Url.Action("DeleteAdministrator","Administration")"
+       data-loginUrl="@Url.Action("Login","Account",new {id = charityId})">
+    <thead>
+        <tr>
+            <th class="userName">
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th class="actions">
+                Actions
+            </th>
+        </tr>
+    </thead>
+
+    @foreach (var administrator in Model)
+    {
+        var className = string.Empty;
+        var userName = administrator.UserName;
+        var administratorId = administrator.Id;
+        if (administrator.IsCurrentAuthenticatedUser)
+        {
+            className = "current";
+            userName += " (current user)";
+        }
+        
+        <tr class="@className">
+            <td id="@administratorId" class="userName" data-userName="@administrator.UserName">
+                @Html.Encode(userName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => administrator.FullName)
+            </td>
+            <td class="center">
+                
+               
+               <a class="editButton" href="@Url.Action("Edit","Administration", new { administrator.Id, charityId})" title="Edit Administrator"></a>
+                <a class="deleteButton" href="#" title="Delete Administrator"></a>
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+<p id="AddUser">
+    @(Html.ActionLink<AdministrationController>(x => x.AddAdministrator(charityId),"Add Administrator", new {@class ="button"}))
+</p>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/appUserAdministration")
+}

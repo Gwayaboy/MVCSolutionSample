@@ -1,0 +1,33 @@
+﻿@using Intrigma.DonorSpace.Web.Controllers
+@model Intrigma.DonorSpace.Web.ViewModels.AuthenticatedUserViewModel 
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>Home Page.</h1>
+                <h2>You are @Model.Role.DisplayName</h2>
+            </hgroup>
+        </div>
+    </section>
+}
+
+@{
+    var allowedActions = new List<MvcHtmlString> { MvcHtmlString.Create("Register new user") };
+    var classNames = new[] {"one", "two", "three"};
+    if (Model.IsAdministrator)
+    {
+        allowedActions.Insert(0,Html.ActionLink<AdministrationController>(c =>c.Index(Model.CharityId),"Administrate the Charity Details and authentication settings"));
+        allowedActions.Insert(1, Html.ActionLink<AdministrationController>(c => c.Administrators(Model.CharityId),"View, edit or remove Charity administrators"));
+    }
+}
+<h3>As @Model.Role.DisplayName you can:</h3>
+<ol class="round">
+    
+    @for (var index = 0; index < allowedActions.Count(); index++)
+    {
+        <li class="@classNames[index]">
+            <h5> @allowedActions[index] </h5> 
+        </li>
+    }
+ 
+</ol>
