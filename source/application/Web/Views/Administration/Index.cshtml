@@ -65,7 +65,7 @@
     <div>
         <div>@(Html.ActionLink<AdministrationController>(x => x.Administrators(Model.Id), "Manage Administrators",new {@class = "button"})) </div>
        
-        <div>@(Html.ActionLink<AdministrationController>(c => c.Donors(),"Manage Users", new {id = "btnManageDonors", @class = "button", @style=btnManageDonorStyle}))</div>
+        @*<div>@(Html.ActionLink<AdministrationController>(c => c.Donors(),"Manage Users", new {id = "btnManageDonors", @class = "button", @style=btnManageDonorStyle}))</div>*@
         
     </div>
     
