@@ -63,10 +63,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\packages\FluentValidation.4.0.0.0\lib\Net40\FluentValidation.dll</HintPath>
     </Reference>
-    <Reference Include="FluentValidation.Mvc, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\application\Web\bin\FluentValidation.Mvc.dll</HintPath>
-    </Reference>
     <Reference Include="Humanizer">
       <HintPath>..\..\..\packages\Humanizer.0.2\lib\NET40\Humanizer.dll</HintPath>
     </Reference>
