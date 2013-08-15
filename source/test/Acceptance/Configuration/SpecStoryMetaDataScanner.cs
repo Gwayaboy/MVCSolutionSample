@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Linq;
+using Autofac;
+using Intrigma.DonorSpace.Acceptance.Helper;
+using Intrigma.DonorSpace.Acceptance.Specification;
 using Intrigma.DonorSpace.Acceptance.Specification.Resolution;
+using Intrigma.DonorSpace.Infrastructure.Extensions;
 using TestStack.BDDfy.Core;
 using TestStack.BDDfy.Scanners;
 
@@ -11,7 +15,7 @@ namespace Intrigma.DonorSpace.Acceptance.Configuration
         public virtual StoryMetaData Scan(object testObject, Type explicityStoryType = null)
         {
             var specification = testObject as ISpecification;
-            if (specification == null)
+            if (testObject == null || specification == null)
                 return null;
 
             var storyAttribute = GetStoryAttribute(specification.Story) ?? CreateStoryAttributeWithSpecificationTitle(specification);

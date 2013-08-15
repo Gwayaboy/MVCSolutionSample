@@ -125,9 +125,10 @@
     <Compile Include="Modules\ScenarioModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Specification\IScenario.cs" />
-    <Compile Include="Specification\Resolution\AutofacLifeTimeScope.cs" />
-    <Compile Include="Specification\Resolution\IScope.cs" />
+    <Compile Include="Specification\Resolution\AutofacLifeTimeScopedContainer.cs" />
+    <Compile Include="Specification\Resolution\IScopedContainer.cs" />
     <Compile Include="Specification\Resolution\ISpecification.cs" />
+    <Compile Include="Specification\Scenario.cs" />
     <Compile Include="Specification\ScenarioCategory.cs" />
     <Compile Include="Specification\ScenarioContext\AutoMappedActionResultControllerScenario.cs" />
     <Compile Include="Specification\ScenarioContext\AutoMappedJSonControllerScenario.cs" />

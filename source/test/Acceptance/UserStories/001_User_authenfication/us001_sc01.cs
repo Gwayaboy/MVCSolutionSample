@@ -37,6 +37,7 @@ namespace Intrigma.DonorSpace.Acceptance.UserStories._001_User_authenfication
             WebSecurity.CreateAccount(authenticatedUserName, password);
         }
         
+        
         protected us001_sc01() : base(1, "Authenticating on premise Charity Administrator") { }
 
         public abstract void Given_there_are_3_Charity_Administrators();

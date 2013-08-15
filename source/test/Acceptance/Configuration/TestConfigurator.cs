@@ -1,8 +1,12 @@
+using System;
+using System.Linq;
+using System.Reflection;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Autofac;
 using Intrigma.DonorSpace.Acceptance.Helper;
 using Intrigma.DonorSpace.Acceptance.Modules;
+using Intrigma.DonorSpace.Acceptance.Specification;
 using Intrigma.DonorSpace.Acceptance.Specification.Resolution;
 using Intrigma.DonorSpace.Core.Domain;
 using Intrigma.DonorSpace.Core.Interfaces.Data;
@@ -32,6 +36,7 @@ namespace Intrigma.DonorSpace.Acceptance.Configuration
         public static void BuildContainer()
         {
             var builder = new ContainerBuilder();
+            ConfigureAndRegisterUserIdentityModule(builder);
 
             ConfigureAndRegisterDataModule(builder);
             ConfigureAndRegisterControllers(builder);
@@ -43,10 +48,15 @@ namespace Intrigma.DonorSpace.Acceptance.Configuration
             Container.InitialiseAutoMapper(Container.BeginLifetimeScope().Resolve);
         }
 
+        private static void ConfigureAndRegisterUserIdentityModule(ContainerBuilder builder)
+        {
+            UserIdentityModule.WithUser(() => new FakePrincipal(new FakeIdentity("someOne"), null));
+            builder.RegisterModule<UserIdentityModule>();
+        }
+
         private static void SetSpecificationScopeProvider()
         {
-            Specification.Specification.ScopeProvider = 
-                () => new AutofacLifeTimeScope(Container.BeginLifetimeScope());
+            Scenario.ScopedContainerProvider = () => new AutofacLifeTimeScopedContainer(Container.BeginLifetimeScope());
         }
         
         private static void RegisterModules(ContainerBuilder builder)
@@ -56,7 +66,6 @@ namespace Intrigma.DonorSpace.Acceptance.Configuration
             builder.RegisterModule<CommandHandlerModule>();
             builder.RegisterModule<FluentValidationModule>();
             builder.RegisterModule<LoggerModule>();
-            //builder.RegisterModule<StartUpModule>();
             builder.RegisterModule<AutoMapperModule>();
             builder.RegisterModule<ApplicationServiceModule>();
 

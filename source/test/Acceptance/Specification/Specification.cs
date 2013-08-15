@@ -29,12 +29,10 @@ namespace Intrigma.DonorSpace.Acceptance.Specification
         public virtual void TearDown() { }
 
         public virtual Type Story { get { return GetType(); } }
-        public virtual string Title { get; set; }
+        public string Title { get; protected set; }
         public virtual ScenarioCategory Category
         {
             get { return ScenarioCategory.Normal; }
         }
-
-        public static Func<IScope> ScopeProvider{ get; set; }
     }
 }

@@ -2,7 +2,10 @@
 using System.Reflection;
 using Autofac;
 using Autofac.Core;
+using Intrigma.DonorSpace.Acceptance.Helper;
+using Intrigma.DonorSpace.Acceptance.Specification;
 using Intrigma.DonorSpace.Acceptance.Specification.ScenarioContext;
+using Intrigma.DonorSpace.Infrastructure.Configuration;
 using Intrigma.DonorSpace.Infrastructure.Extensions;
 using Intrigma.DonorSpace.Infrastructure.Interfaces.Web;
 using Intrigma.DonorSpace.Infrastructure.Web;
@@ -14,11 +17,16 @@ namespace Intrigma.DonorSpace.Acceptance.Modules
     {
         protected override void Load(ContainerBuilder builder)
         {
+            SetControllerScenarios(builder);
+        }
+
+        private void SetControllerScenarios(ContainerBuilder builder)
+        {
             var controllerScenarioTypes =
-            AssemblyScanner
-                .GetExportedTypesFromAssemblyContaining<NotImplementedSubcutaneouslyScenario>()
-                .GetConcreteTypesImplementingOpenGenericInterfaceType(typeof (IControllerScenario<>))
-                .Where(result => result.ConcreteType.IsGenericTypeDefinition);
+                AssemblyScanner
+                    .GetExportedTypesFromAssemblyContaining<NotImplementedSubcutaneouslyScenario>()
+                    .GetConcreteTypesImplementingOpenGenericInterfaceType(typeof (IControllerScenario<>))
+                    .Where(result => result.ConcreteType.IsGenericTypeDefinition);
 
             foreach (var result in controllerScenarioTypes)
             {

@@ -64,7 +64,7 @@ namespace Intrigma.DonorSpace.Infrastructure.Extensions
         /// <param name="canditateType"></param>
         /// <param name="openGeneric"></param>
         /// <returns></returns>
-        public static bool IsClosedTypeOf(this Type canditateType, Type openGeneric)
+        internal static bool IsClosedTypeOf(this Type canditateType, Type openGeneric)
         {
             if (canditateType == null) throw new ArgumentNullException("canditateType");
             if (openGeneric == null) throw new ArgumentNullException("openGeneric");

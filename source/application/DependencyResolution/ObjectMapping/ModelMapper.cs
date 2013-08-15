@@ -21,7 +21,7 @@ namespace Intrigma.DonorSpace.Infrastructure.DependencyResolution.ObjectMapping
             var mappingConfiguration = _mapper.GetMappingConfigurationMatching(formType);
             if (mappingConfiguration == null)
             {
-                throw new ArgumentException(string.Format("There is no Command associated with Form {0}", form.GetType().Name));
+                throw new ArgumentException(string.Format("There is no Command associated with Form {0}", formType.Name));
             }
             var commandType = mappingConfiguration.DestinationType;
             return (ICommand)Map(form, commandType);

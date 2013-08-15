@@ -10,7 +10,6 @@ namespace Intrigma.DonorSpace.ExecutableSpecifications._001_User_authenfication
 {
     public class us001_sc01_Authenticating_on_premise_Charity_Administrator : us001_sc01<PostControllerScenario<AccountController,AuthenticateUserForm>>
     {
-        
         public override void Given_there_are_3_Charity_Administrators()
         {
             CreateAndSaveAdministratorAccount(AuthenticatedUserName, AuthenticatedPassword);

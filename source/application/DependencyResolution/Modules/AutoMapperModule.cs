@@ -2,9 +2,11 @@ using System;
 using System.Security.Principal;
 using AutoMapper;
 using Autofac;
-using Intrigma.DonorSpace.Infrastructure.DependencyResolution.ObjectMapping;
+using Autofac.Core;
 using Intrigma.DonorSpace.Infrastructure.Extensions;
 using Intrigma.DonorSpace.Infrastructure.Interfaces.ObjectMapping;
+using Intrigma.DonorSpace.Infrastructure.DependencyResolution.ObjectMapping;
+
 
 namespace Intrigma.DonorSpace.Infrastructure.DependencyResolution.Modules
 {
@@ -34,12 +36,14 @@ namespace Intrigma.DonorSpace.Infrastructure.DependencyResolution.Modules
             builder.RegisterAssemblyTypes(AssemblyScanner.FromWebAssembly())
                    .Where(t => t.IsConcreteTypeOf<IHaveCustomMappings>())
                    .AsSelf()
-                   .OnActivating(e =>
-                       {
-                           var viewModel = (IHaveCustomMappings) e.Instance;
-                           viewModel.UserIdentityProvider = e.Context.Resolve<Func<IPrincipal>>();
-                       });
+                   .OnActivating(ConfigureUserIdentityProvider);
 
+        }
+
+        private static void ConfigureUserIdentityProvider(IActivatingEventArgs<object> e)
+        {
+            var viewModel = (IHaveCustomMappings) e.Instance;
+            viewModel.UserIdentityProvider = e.Context.Resolve<Func<IPrincipal>>();
         }
     }
 }
